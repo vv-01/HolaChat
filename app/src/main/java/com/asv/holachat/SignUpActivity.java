@@ -56,6 +56,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 database.getInstance().getReference().child("Users").child(id).setValue(user);
 
                                 Toast.makeText(SignUpActivity.this, "SignUp Success !!", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(SignUpActivity.this , SignInActivity.class);
                             }
                         }
 
