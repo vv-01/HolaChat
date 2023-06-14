@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 mAuth.signOut();
                 Intent intent = new Intent(MainActivity.this, SignInActivity.class);
                 Toast.makeText(this, "LoggedOut Successfully!!", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
                 break;
             case R.id.groupChat:
                 Toast.makeText(this, "Opening GroupChat!!", Toast.LENGTH_SHORT).show();

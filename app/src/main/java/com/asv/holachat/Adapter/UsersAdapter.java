@@ -1,6 +1,7 @@
 package com.asv.holachat.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.asv.holachat.ChatDetailActivity;
 import com.asv.holachat.Models.Users;
 import com.asv.holachat.R;
 import com.squareup.picasso.Picasso;
@@ -39,6 +41,16 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> 
         //holder.image.setImageResource( users.getProfilePic() );
         holder.username.setText( users.getUserName() );
         //holder.lastMessage.setText( users.getLastMessage() );
+        holder.itemView.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( context, ChatDetailActivity.class );
+                intent.putExtra( "userId",users.getUserId() );
+                intent.putExtra( "profilePic",users.getProfilePic() );
+                intent.putExtra( "userName",users.getUserName() );
+                context.startActivity( intent );
+            }
+        } );
     }
 
     @Override
