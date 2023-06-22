@@ -14,6 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.asv.holachat.ChatDetailActivity;
 import com.asv.holachat.Models.Users;
 import com.asv.holachat.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -40,7 +45,26 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> 
         Picasso.get().load( users.getProfilePic() ).placeholder( R.drawable.avatar3 ).into( holder.image );
         //holder.image.setImageResource( users.getProfilePic() );
         holder.username.setText( users.getUserName() );
-        //holder.lastMessage.setText( users.getLastMessage() );
+
+        FirebaseDatabase.getInstance().getReference().child("chats")
+                .child(FirebaseAuth.getInstance().getUid()+users.getUserId())
+                .orderByChild("timestamp")
+                .limitToLast(1)
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.hasChildren()){
+                            for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                                holder.lastMessage.setText( dataSnapshot.child("message").getValue().toString() );
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });//holder.lastMessage.setText( users.getLastMessage() );
         holder.itemView.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {

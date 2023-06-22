@@ -40,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch ( item.getItemId() ){
             case R.id.settings:
+                Intent intent2 = new Intent(MainActivity.this, settingsActivity.class);
                 Toast.makeText(this, "Opening Settings!!", Toast.LENGTH_SHORT).show();
+                startActivity(intent2);
                 break;
             case R.id.logOut:
                 Toast.makeText(this, "SigningOut!!", Toast.LENGTH_SHORT).show();
@@ -50,7 +52,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.groupChat:
+                Intent intent1 = new Intent(MainActivity.this, groupChatActivity.class);
                 Toast.makeText(this, "Opening GroupChat!!", Toast.LENGTH_SHORT).show();
+                startActivity(intent1);
                 break;
         }
         return super.onOptionsItemSelected(item);

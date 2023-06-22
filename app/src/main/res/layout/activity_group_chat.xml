@@ -130,7 +130,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/menu"/>
 
-            
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.appcompat.widget.Toolbar>
