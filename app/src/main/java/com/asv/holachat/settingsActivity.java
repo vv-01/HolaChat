@@ -28,12 +28,11 @@ import com.squareup.picasso.Picasso;
 import java.util.HashMap;
 
 public class settingsActivity extends AppCompatActivity {
-
-    TextView textView2;
     ActivitySettingsBinding binding;
     FirebaseAuth auth;
     FirebaseDatabase database;
     FirebaseStorage storage;
+    Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +57,31 @@ public class settingsActivity extends AppCompatActivity {
         binding.txtView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView2 = binding.txtView2;
-                textView2.setMovementMethod(LinkMovementMethod.getInstance());
+                Intent intent = new Intent(settingsActivity.this, privacyPolicy.class);
+                startActivity(intent);
+                //textView2.setMovementMethod(LinkMovementMethod.getInstance());
+            }
+        });
+
+
+        binding.txtView5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //textView2.setMovementMethod(LinkMovementMethod.getInstance());
+            }
+        });
+
+
+        binding.txtView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType( "text/plain" );
+                intent.putExtra( Intent.EXTRA_SUBJECT, "Check out this chatting application !!" );
+                intent.putExtra( Intent.EXTRA_TEXT,"https://play.google.com/store/apps/details?id=com.asv.holachat" );
+                startActivity( Intent.createChooser( intent,"Share with" ) );
+                //textView2.setMovementMethod(LinkMovementMethod.getInstance());
             }
         });
 
