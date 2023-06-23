@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.asv.holachat.Adapter.chatAdapter;
 import com.asv.holachat.Models.messageModel;
 import com.asv.holachat.databinding.ActivityChatDetailBinding;
+import com.asv.holachat.databinding.ActivityGroupChatBinding;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -24,12 +25,12 @@ import java.util.Date;
 
 public class groupChatActivity extends AppCompatActivity {
 
-    ActivityChatDetailBinding binding;
+    ActivityGroupChatBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityChatDetailBinding.inflate( getLayoutInflater() );
+        binding = ActivityGroupChatBinding.inflate( getLayoutInflater() );
         setContentView(binding.getRoot());
 
         getSupportActionBar().hide();
@@ -42,7 +43,7 @@ public class groupChatActivity extends AppCompatActivity {
             }
         });
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final ArrayList<messageModel> messageModels = new ArrayList<>();
         final String senderId = FirebaseAuth.getInstance().getUid();
         binding.username.setText("GroupChat");
@@ -52,7 +53,7 @@ public class groupChatActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         binding.chatRecyclerView.setLayoutManager(layoutManager);
 
-        database.getReference().child("Group Chat")
+        database.getReference().child("GroupChat")
                         .addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {

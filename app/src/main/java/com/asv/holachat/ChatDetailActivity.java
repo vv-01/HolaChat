@@ -79,8 +79,6 @@ public class ChatDetailActivity extends AppCompatActivity {
                             messageModels.add(model);
                         }
                         chatAdapter.notifyDataSetChanged();
-
-                        chatAdapter.notifyDataSetChanged();
                     }
 
 
