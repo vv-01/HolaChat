@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ChatDetailActivity"
-    android:background="@drawable/w4">
+    android:background="@drawable/backgroundwall2">
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
@@ -45,7 +45,7 @@
             android:layout_marginStart="6dp"
             android:layout_marginLeft="4dp"
             android:layout_weight="0"
-            app:srcCompat="@drawable/send" />
+            app:srcCompat="@drawable/baseline_send_242" />
 
     </LinearLayout>
 
@@ -53,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/toolbar"
-        android:background="?attr/colorPrimary"
+        android:background="#000000"
         android:minHeight="?attr/actionBarSize"
         android:theme="?actionBarTheme">
 
@@ -69,7 +69,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.476"
-                app:srcCompat="@drawable/leftarrow"/>
+                app:srcCompat="@drawable/baseline_arrow_back_ios_new_24"/>
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="45dp"
                 android:layout_height="45dp"
@@ -78,57 +78,57 @@
                 android:layout_marginLeft="5dp"
                 android:padding="5dp"
                 android:src="@drawable/avatar3"
-                app:civ_border_color="#FF000000"
-                app:civ_border_width="2dp"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/backArrow"
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
                 android:id="@+id/username"
-                android:text="Username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
+                android:text="Username"
+                android:textColor="#FFFFFF"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/profileImage"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView4"
-                android:layout_marginEnd="15dp"
-                android:layout_marginRight="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageView5"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/call"/>
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/imageView4"-->
+<!--                android:layout_marginEnd="15dp"-->
+<!--                android:layout_marginRight="15dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/imageView5"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:srcCompat="@drawable/call"/>-->
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView5"
-                android:layout_marginEnd="15dp"
-                android:layout_marginRight="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageView6"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/videocall"/>
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/imageView5"-->
+<!--                android:layout_marginEnd="15dp"-->
+<!--                android:layout_marginRight="15dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/imageView6"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:srcCompat="@drawable/videocall"/>-->
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView6"
-                android:layout_marginEnd="15dp"
-                android:layout_marginRight="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/menu"/>
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/imageView6"-->
+<!--                android:layout_marginEnd="15dp"-->
+<!--                android:layout_marginRight="15dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:srcCompat="@drawable/menu"/>-->
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

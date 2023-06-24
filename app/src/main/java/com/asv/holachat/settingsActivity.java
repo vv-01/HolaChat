@@ -64,13 +64,7 @@ public class settingsActivity extends AppCompatActivity {
         });
 
 
-        binding.txtView5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                //textView2.setMovementMethod(LinkMovementMethod.getInstance());
-            }
-        });
 
 
         binding.txtView4.setOnClickListener(new View.OnClickListener() {

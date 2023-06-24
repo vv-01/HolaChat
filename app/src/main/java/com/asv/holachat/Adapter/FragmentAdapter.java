@@ -22,10 +22,10 @@ public class FragmentAdapter extends FragmentPagerAdapter{
     switch (position) {
         case 0:
             return new chatsFragment();
-        case 1:
-            return new storyFragment();
-        case 2:
-            return new callsFragment();
+//        case 1:
+//            return new storyFragment();
+//        case 2:
+//            return new callsFragment();
         default:
             return new chatsFragment();
     }
@@ -45,12 +45,8 @@ public class FragmentAdapter extends FragmentPagerAdapter{
         if (position == 0) {
             title = "CHAT";
         }
-        if (position == 1) {
-            title = "STORY";
-        }
-        if (position == 2) {
-            title = "CALLS";
-        }
+
+        //}
         return title;
     }
 }
